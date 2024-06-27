@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <form action="/submit" method="post" class="row g-3">
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden">Enter Your URL</label><br>
+          <input name="url" type="text" class="form-control" id="inputPassword2">
+        </div>
+        <input type="submit">
+      </form> <br>
+    <div class="container">
+        <h1>Scraped Content:</h1>
+        <pre>
+    
+            {{scraped_content}}
+        </pre>
+    </div>
+</body>
+</html>
